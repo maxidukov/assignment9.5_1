@@ -79,48 +79,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(stopwatch, &StopWatch::send_lap_update, this, &MainWindow::get_lap_update);
 
     connect(lap_but, &QPushButton::clicked, stopwatch, &StopWatch::get_lap_info_request);
-
-    // QTime start_time = QTime::currentTime();
-    // qint64 time_diff = 0;
-    // qint64 prev_diff = 12000;
-    // //start_time.msecsSinceStartOfDay();
-    // //qDebug() << "Start time is " << start_time;
-
-    // //start_time = QTime::currentTime();
-
-    // // qint64 twosecs = 2000;
-    // // qDebug() << QTime::fromMSecsSinceStartOfDay(twosecs);
-
-    // QTimer* timer = new QTimer();
-    // connect(timer, &QTimer::timeout, this, [=]()mutable{
-    //     //time_counter->setText(start_time.msecsTo(QTime::currentTime()).toString("hh:mm:ss:zzz"));
-    //     time_diff = start_time.msecsTo(QTime::currentTime()) + prev_diff;
-    //     qDebug() << "\tTime diff on timeout is " << time_diff;
-    //     QTime timestamp = QTime::fromMSecsSinceStartOfDay(time_diff);
-    //     time_counter->setText(timestamp.toString("hh:mm:ss:zzz"));
-    // });
-    // connect(startstop_but, &QPushButton::clicked, this, [=]()mutable{
-    //     if(startstop_but->isChecked()){
-    //         // qDebug() << "Start time is now " << start_time << ", current time is " << QTime::currentTime();
-    //         // qDebug() << start_time.msecsTo(QTime::currentTime());
-    //         qDebug() << "Time diff before at (re)start is " << time_diff;
-    //         qDebug() << "Prev diff at start is " << prev_diff;
-    //         start_time = QTime::currentTime();
-    //         timer->start(500);
-    //     }else{
-    //         qDebug() << "Time diff before stop is " << time_diff;
-    //         prev_diff = time_diff;
-    //         timer->stop();
-    //         qDebug() << "Time diff at stop is " << time_diff;
-    //         //prev_diff = time_diff;
-    //         qDebug() << "Prev diff at stop is " << prev_diff;
-    //     }
-    // });
-    // connect(clear_but, &QPushButton::clicked, this, [=, &start_time]()mutable{
-    //     //start_time = QTime::currentTime();
-    //     prev_diff = 0;
-    //     time_counter->setText(QTime::fromMSecsSinceStartOfDay(0).toString("hh:mm:ss:zzz"));
-    // });
 }
 
 void MainWindow::get_time_update(qint64 time_diff){
