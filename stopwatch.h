@@ -8,7 +8,7 @@ class StopWatch : public QObject
 {
     Q_OBJECT
 public:
-    StopWatch();
+    StopWatch(QObject *parent = nullptr);
     ~StopWatch();
 
 Q_SIGNALS:
