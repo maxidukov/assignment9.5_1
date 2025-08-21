@@ -1,7 +1,7 @@
 #include "stopwatch.h"
 
 StopWatch::StopWatch(): timer(new QTimer()) {
-    connect(timer, &QTimer::timeout, this, [=](){
+    connect(timer, &QTimer::timeout, this, [&](){
         time_diff = start_time.msecsTo(QTime::currentTime()) + prev_diff;
         emit send_time_update(time_diff);
     });
